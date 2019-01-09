@@ -1,0 +1,42 @@
+
+#body{
+    text-align: center;
+}
+
+#pong{
+    background-color: black;
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#player-paddle{
+    background-color: green;
+}
+
+#player2-paddle{
+    background-color: rgba(255, 81, 0, 0.733);
+    right: 0px;
+}
+
+#ball{
+    background-color: yellow;
+    width: 20px;
+    height: 20px;
+    left: 300px;
+    top: 150px;
+    border-radius: 100%;
+    position: absolute;
+}
+
+.padel{
+    height: 100px;
+    width: 20px;
+    position: absolute;   
+}
+
+#restart{
+    margin: 0 auto;
+    position: relative;
+}
