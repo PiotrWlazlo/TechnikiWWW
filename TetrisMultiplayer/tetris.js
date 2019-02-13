@@ -194,25 +194,26 @@ function rotate(matrix, dir){
         matrix.reverse();
     }
 }
-
+/*
 const player = {
-    pos: {x:5, y:5},
+  pos: {x:5, y:5},
     matrix: createPiece('T'), //tu może zrobić tablicę obiektów i robić losowanie
 }
-
+*/
+const player = new Player
 document.addEventListener('keydown',event => {
     if(event.keyCode === 37){
-        PlayerMove(-1);
+        player.Move(-1);
     }
     else if(event.keyCode === 39){
-        PlayerMove(1);
+        player.Move(1);
     }
     else if(event.keyCode === 40){
         player.pos.y++;
     }else if(event.keyCode === 81){
-        playerRotate(-1);
+        player.Rotate(-1);
     }else if(event.keyCode === 87){
-        playerRotate(1);
+        player.Rotate(1);
     }
 });
 
