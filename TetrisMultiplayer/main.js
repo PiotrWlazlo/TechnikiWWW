@@ -1,7 +1,10 @@
+const tetri = []
+
 const playerElements = document.querySelectorAll('.player');
 [...playerElements].forEach(element => {
     const canvas = element.querySelector('canvas');
     const tetris = new Tetris(canvas);
+    tetri.push(tetris);
 });
 
 //const canvas = document.getElementById('tetris');
@@ -61,18 +64,24 @@ function createPiece(type)
 
 
 document.addEventListener('keydown', event => {
-    const player = tetris.player;
-    if (event.keyCode === 37) {
-        player.move(-1);
-    } else if (event.keyCode === 39) {
-        player.move(1);
-    } else if (event.keyCode === 40) {
-        player.drop();
-    } else if (event.keyCode === 81) {
-        player.rotate(-1);
-    } else if (event.keyCode === 87) {
-        player.rotate(1);
-    }
+    [
+        [37,39,81,87,40],
+        [65,68,79,80,83], //a,d,o,p,s
+    ].forEach((key,index) => {
+        const player = tetri[index].player;
+        if (event.keyCode ===key[0]) {
+            player.move(-1);
+        } else if (event.keyCode === key[1]) {
+            player.move(1);
+        } else if (event.keyCode ===key[4]) {
+            player.drop();
+        } else if (event.keyCode ===key[2]) {
+            player.rotate(-1);
+        } else if (event.keyCode ===key[3]) {
+            player.rotate(1);
+        }
+    })
+    
 });
 
 
