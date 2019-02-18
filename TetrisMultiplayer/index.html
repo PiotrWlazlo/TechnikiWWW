@@ -9,16 +9,35 @@
     <style>
         body {
             background: #202028;
+            display: flex;
             color: #fff
             font_family: sans-serif;
             text-align: center;
         }
+
+        .player {
+            flex: 1 1 auto;
+        }
+
+        canvas {
+            border: solid #fff;
+            height: 90vh;
+        }
     </style>
 </head>
 <body>
-    <canvas id='tetris' width="240" height="400" style="border:1px solid #000000;"></canvas>
-    <script src="player.js"></script>
+    <div class='player'>
+        <canvas class='tetris' width="240" height="400" style="border:1px solid #000000;"></canvas>
+    </div>
+
+    <div class='player'>
+        <canvas class='tetris' width="240" height="400" style="border:1px solid #000000;"></canvas>
+    </div>
+
     <script src="tetris.js"></script>
+    <script src="arena.js"></script>
+    <script src="player.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
 
